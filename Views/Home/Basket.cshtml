@@ -1,0 +1,128 @@
+﻿@using Newtonsoft.Json;
+@{
+    ViewData["Title"] = "CheckouPage";
+}
+
+<h1>Basket</h1>
+<br />
+
+@{
+   
+    var isLoggedIn = TempData["IsLoggedIn"].ToString();
+    TempData.Keep("IsLoggedIn");
+
+    //we collect data for Invoice Insertion into DB throughout this page
+    InvoiceModel InvoiceDataForInsert = new InvoiceModel();
+
+    if (isLoggedIn != string.Empty)
+    {
+        var UserName = isLoggedIn.ToString().Split(',').ElementAt(0);
+        var UserId = int.Parse(isLoggedIn.ToString().Split(',').ElementAt(1));
+        <p> you are logged in as @UserName</p>
+
+        InvoiceDataForInsert.UserId = UserId;
+
+
+        var BasketAsObj = TempData["basket"];
+        TempData.Keep();
+        if (BasketAsObj != null)
+        {
+
+            decimal Total = 0;
+            string basket = BasketAsObj.ToString();
+
+            InvoiceDataForInsert.Products = basket;
+
+            Dictionary<int, int> Basket = JsonConvert.DeserializeObject<Dictionary<int, int>>(basket);
+            
+            List<Product> AllDbProducts = AzureDb.Instance.GetProducts();
+
+            <h2>Your basket Contains:</h2>
+
+            //Keys are Ids values are Quantity
+            var BasketProductsIds = Basket.Keys;
+
+            //the idea here is that we get all products from DataBase, in loop compare each of their Ids with ids from Basket-(Highly ineffective) 
+            //if they match we calculate subtotals and total 
+
+            foreach (var DbProduct in AllDbProducts)
+            {
+                if (BasketProductsIds.Contains(DbProduct.nProductId))
+                {                   
+                    var Quantity = Basket[DbProduct.nProductId];
+
+                    decimal SubTotal = DbProduct.nUnitPrice * Quantity;
+                    <p>@DbProduct.cname, Quantity: @Quantity (x @DbProduct.nUnitPrice =@SubTotal DKK)</p>                   
+                    
+                        Total += DbProduct.nUnitPrice * Quantity;
+                    
+                }
+            }
+
+
+                InvoiceDataForInsert.Total = Total;
+                InvoiceDataForInsert.Tax = 25;
+
+                <br />
+                <h2>Total: @Total DKK</h2>
+                
+                <br />
+                List<CreditCard> cards = AzureDb.Instance.GetCreditCardsForUser(UserId);
+                <h3>Payment Method</h3>
+                <h4> Please Chose a card associated with your account to complete the purchase</h4>
+
+
+
+            if (cards.Count == 0)
+            {
+                    <h2> "no cards are registered with this user"</h2>
+            }
+            else
+            {
+
+
+                foreach (var card in cards)
+                {
+                    InvoiceDataForInsert.CreditCardId = card.nCreditCardId;
+
+                        <div style="border:solid">
+                            <h5>Card Id: @card.nCreditCardId</h5>
+                            <p>Card IBAN: @card.nIBANCode</p>
+                            <p>Ending On: @card.dExpDate</p>
+                            
+                            @{ 
+                                //this button will trigger the Insert Invoice transaction after redirect
+                            }
+                            <button>                               
+                                <a href="@Url.Action("CheckoutPage", "Home", InvoiceDataForInsert)">Pay order with this Card</a>
+                            </button>
+                            <br />
+
+                        </div>
+                        <br />
+                }
+            }
+
+
+                <div>
+                    <button>
+                        <a href="@Url.Action("ClearBasket", "Home")">Clear Basket</a>
+                    </button>
+
+
+                </div>
+
+        }
+        else
+        {
+            <h3>Your Basket is empty, put something in it!</h3>
+        }
+    }
+    else
+    {
+
+        <h2>You need to be logged in, in order to use Basket Please do so <a href="/">here</a></h2>
+
+    }
+ }
+

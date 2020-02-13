@@ -1,0 +1,158 @@
+[
+   {
+      "productName":"testProduct",
+      "userName":"Kevin Bauer",
+      "rating":3,
+      "comment":"I will not buy anything from you ever again. You lost a customer."
+   },
+   {
+      "productName":"testProduct",
+      "userName":"John Bauer",
+      "rating":3,
+      "comment":"Good to run in, I can feel the breeze."
+   },
+   {
+      "productName":"testProduct",
+      "userName":"Brandon Jackson",
+      "rating":4,
+      "comment":"Comfy to wear, ideal for Netflix and Chill time."
+   },
+   {
+      "productName":"Sweatpants with Side Stripes",
+      "userName":"John Bauer",
+      "rating":5,
+      "comment":"Can totally recommend to my friends."
+   },
+   {
+      "productName":"Sweatpants with Side Stripes",
+      "userName":"Brandon Jackson",
+      "rating":1,
+      "comment":"Not satisfied with the quality of the product at all."
+   },
+   {
+      "productName":"Sweatpants with Side Stripes",
+      "userName":"Kevin Bauer",
+      "rating":0,
+      "comment":"Not great, not terrible."
+   },
+   {
+      "productName":"Skinny Regular Ankle Jeans",
+      "userName":"Brandon Jackson",
+      "rating":0,
+      "comment":"Wasnt something I was quite hoping for, but at least the delivery was fast."
+   },
+   {
+      "productName":"Skinny Regular Ankle Jeans",
+      "userName":"Jermaine Holt",
+      "rating":0,
+      "comment":"Very unpleasant to wear."
+   },
+   {
+      "productName":"Skinny Regular Ankle Jeans",
+      "userName":"Seth Wynn",
+      "rating":0,
+      "comment":"Help me..."
+   },
+   {
+      "productName":"Sweatshirt",
+      "userName":"Jermaine Holt",
+      "rating":0,
+      "comment":"Bought it for my wife, she loved it."
+   },
+   {
+      "productName":"Sweatshirt",
+      "userName":"Honorato Clements",
+      "rating":4,
+      "comment":"This was recommended to me by a friend, it OK I guess."
+   },
+   {
+      "productName":"Sweatshirt",
+      "userName":"Kevin Bauer",
+      "rating":1,
+      "comment":"This product is gr8, I r8 8\/8, cant h8 only apprecia8."
+   },
+   {
+      "productName":"Wool-blend Coat",
+      "userName":"Seth Wynn",
+      "rating":2,
+      "comment":"Reclamation took very long, the product was low quality."
+   },
+   {
+      "productName":"Wool-blend Coat",
+      "userName":"Honorato Clements",
+      "rating":3,
+      "comment":"Overall very satisfied with it."
+   },
+   {
+      "productName":"Wool-blend Coat",
+      "userName":"Darius Robbins",
+      "rating":3,
+      "comment":"Its a good gift for your family memebers. Quite cheap as well."
+   },
+   {
+      "productName":"Pajamas",
+      "userName":"Honorato Clements",
+      "rating":4,
+      "comment":null
+   },
+   {
+      "productName":"Pajamas",
+      "userName":"Honorato Clements",
+      "rating":5,
+      "comment":null
+   },
+   {
+      "productName":"Pajamas",
+      "userName":"Darius Robbins",
+      "rating":5,
+      "comment":null
+   },
+   {
+      "productName":"Cashmere Scarf",
+      "userName":"Darius Robbins",
+      "rating":5,
+      "comment":null
+   },
+   {
+      "productName":"Cashmere Scarf",
+      "userName":"Kevin Bauer",
+      "rating":5,
+      "comment":null
+   },
+   {
+      "productName":"Cashmere Scarf",
+      "userName":"Kevin Bauer",
+      "rating":5,
+      "comment":null
+   },
+   {
+      "productName":"Hooded Sweatshirt",
+      "userName":"Paul Valentine",
+      "rating":3,
+      "comment":null
+   },
+   {
+      "productName":"Hooded Sweatshirt",
+      "userName":"Darius Robbins",
+      "rating":1,
+      "comment":null
+   },
+   {
+      "productName":"Hooded Sweatshirt",
+      "userName":"Jermaine Holt",
+      "rating":3,
+      "comment":null
+   },
+   {
+      "productName":"T-Shirt",
+      "userName":"Paul Valentine",
+      "rating":0,
+      "comment":null
+   },
+   {
+      "productName":"T-Shirt",
+      "userName":"Honorato Clements",
+      "rating":0,
+      "comment":null
+   }
+]
