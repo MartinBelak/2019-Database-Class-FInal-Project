@@ -36,8 +36,8 @@ namespace database_final_project.Controllers
             var UserData = AzureDb.Instance.LoginUser(model);
             if (UserData.UserId == 0)
             {
-                TempData["IsLoggedIn"] = "";
-                TempData["LogginMessage"] = "No user with such Id in Our Database";
+                TempData["IsLoggedIn"] = null;
+                TempData["LogginMessage"] = "No user with such Id in Our Database or there is error in connection string";
                 return View("./Index");
             }
             else
